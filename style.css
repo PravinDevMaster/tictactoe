@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-color: #000;
+}
+.select-player, .select-box , .play-section, .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 0.3s ease-in;
+}
+.select-box, .select-player{
+    background-color: #333;
+    padding: 20px 25px 25px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 0 0 10px #fff,
+                0 0 5px #fff;
+}
+.select-box, .select-player.hide{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.select-box.show{
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.select-box header, .select-player header{
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #fff;
+}
+.select-box .title, .select-player .title{
+    color: #fff;
+    font-size: 18px;
+    font-family: 600;
+    margin: 20px 0;
+}
+.select-box .options, .select-player .options{
+    width: 100%;
+    display: flex;
+}
+.select-box .options button, .select-player .options button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: crimson;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+.select-box .options button:hover ,.result-box .btn button:hover, .select-player .options button:hover{
+    transform: scale(0.9);
+    box-shadow: 0 0 10px #fff,
+                0 0 5px #fff
+}
+.select-box .options .player-x, .select-player .options .single{
+    margin-right:5px ;
+}
+.select-box .options .player-o, .select-player .options .double{
+    margin-left:5px ;
+}
+.play-section{
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.play-section.show{
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%, -50%) scale(0.9);
+}
+.play-section .details{
+    background-color: #333;
+    box-shadow: 0 0 10px #fff, 0 0 5px #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+.play-section .details .players{
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: space-between;
+}
+.details  span{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 1000;
+    cursor: default;
+    text-align: center;
+    border-radius: 5px;
+    color: crimson;
+    position: relative;
+    z-index: 5;
+    transition: all 0.3s ease;
+}
+.details span:first-child{
+    color: #fff;
+}
+.details .slider{
+    background-color: crimson;
+    position: absolute;
+    box-shadow: 0 0 2px #fff, 0 0 5px #fff;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 5px;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+.players.active span:first-child{
+    color: crimson;
+}
+.players.active span:nth-child(2){
+    color:#fff;
+}
+.players.active .slider{
+    left: 50%;
+}
+.play-section .play-area{
+    margin-top: 20px;
+}
+.play-section section{
+    display: flex;
+}
+.play-section section span{
+    display: block;
+    margin: 2px;
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+    border-radius: 5px;
+    font-size: 55px;
+    text-align: center;
+    box-shadow:  0 0 10px #fff, 0 0 5px #fff;
+    line-height: 80px;
+    color: crimson;
+    text-shadow: 0 0 10px #fff,
+                 0 0 5px #fff;
+                 
+}
+.result-box{
+    background-color: #333;
+    box-shadow:  0 0 10px #fff, 0 0 5px #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 350px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%,-50%) scale(0.9);
+}
+.result-box.show{
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(-50%,-50%) scale(1);
+}
+.result-box .won-text{
+    font-size: 25px;
+    display: flex;
+    font-weight: 500;
+    color: #fff;
+    justify-content: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.result-box .won-text p{
+    color: crimson;
+    font-weight: 700;
+    margin: 0 5px;
+}
+.result-box .btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.result-box .btn button{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    background-color: crimson;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
